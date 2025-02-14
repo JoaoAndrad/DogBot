@@ -1,0 +1,70 @@
+function doGet(e) {
+  const month = e.parameter.month;
+  const contato = e.parameter.contato;
+
+  const sheet = SpreadsheetApp.openById('YOUR_SPREADSHEET_ID').getSheetByName('Estatisticas Individuais');
+  const data = sheet.getDataRange().getValues();
+
+  const meses = {
+    "Janeiro": "01",
+    "Fevereiro": "02",
+    "Março": "03",
+    "Abril": "04",
+    "Maio": "05",
+    "Junho": "06",
+    "Julho": "07",
+    "Agosto": "08",
+    "Setembro": "09",
+    "Outubro": "10",
+    "Novembro": "11",
+    "Dezembro": "12"
+  };
+
+  const mesNumero = meses[month];
+  const estatisticas = {};
+
+  data.forEach((row, index) => {
+    if (index === 0) return; // Skip header row
+
+    const [contatoAtual, nome, data, grupos] = row;
+    const [dia, mes, ano] = data.split('/');
+
+    if (mes === mesNumero && contatoAtual === contato) {
+      if (!estatisticas[nome]) {
+        estatisticas[nome] = {
+          totalTreinos: 0,
+          grupamentos: {}
+        };
+      }
+
+      estatisticas[nome].totalTreinos += 1;
+
+      const gruposArray = grupos.split(', ');
+      gruposArray.forEach(grupo => {
+        if (!estatisticas[nome].grupamentos[grupo]) {
+          estatisticas[nome].grupamentos[grupo] = 0;
+        }
+        estatisticas[nome].grupamentos[grupo] += 1;
+      });
+    }
+  });
+
+  const resultado = [];
+  for (const nome in estatisticas) {
+    const totalGrupamentos = Object.keys(estatisticas[nome].grupamentos).length;
+    const totalTreinos = estatisticas[nome].totalTreinos;
+    const grupamentos = estatisticas[nome].grupamentos;
+
+    let relatorio = `Estatísticas de Treino - ${month} 📊\n\n👤 ${nome}\n✅ Total de treinos: ${totalTreinos}\n✅ Total de grupamentos musculares registrados: ${totalGrupamentos}\n\n📅 Ao longo de ${month} você treinou cada grupamento:\n`;
+
+    for (const grupo in grupamentos) {
+      const vezes = grupamentos[grupo];
+      const porcentagem = ((vezes / totalTreinos) * 100).toFixed(2);
+      relatorio += `\n🏋 ${grupo}: ${vezes} vez(es) (${porcentagem}%)`;
+    }
+
+    resultado.push(relatorio);
+  }
+
+  return ContentService.createTextOutput(JSON.stringify(resultado)).setMimeType(ContentService.MimeType.JSON);
+}

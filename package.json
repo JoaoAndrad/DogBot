@@ -1,0 +1,25 @@
+{
+  "name": "bot-treino-whatsapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^9.1.4",
+    "@whiskeysockets/baileys": "^6.7.12",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "google-spreadsheet": "^3.3.0",
+    "link-preview-js": "^3.0.14",
+    "moment-timezone": "^0.5.40",
+    "node-fetch": "^2.7.0",
+    "node-schedule": "^2.1.1",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}

@@ -1,0 +1,6 @@
+DISPLAY_NAME=DogFort
+MAIN=index.js
+VERSION=recommended
+MEMORY=1024
+AUTORESTART=true
+DESCRIPTION=Bot do DogFort
