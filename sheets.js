@@ -67,7 +67,7 @@ async function registrarTreino(numero, sock, chatId, msg) {
     if (userTreino) {
         const lastWorkoutDate = userTreino['Horario'];
         if (lastWorkoutDate === today) {
-            mensagem = 'Tu já treinou hoje, ladrão fdp!';
+            mensagem = 'Você já treinou hoje!';
         } else {
             userTreino['Treinos'] = parseInt(userTreino['Treinos'] || 0) + 1;
             userTreino['Anual'] = parseInt(userTreino['Anual'] || 1) + 1;
