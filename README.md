@@ -1,21 +1,17 @@
-# DogBot
-🐶 DogBot - Seu Assistente de Treinos no WhatsApp 💪
-O DogBot é um bot para WhatsApp que auxilia no registro e acompanhamento de treinos em grupos da academia. Ele mantém um histórico de treinos dos usuários e gera relatórios detalhados com estatísticas personalizadas.
+# DogBot - Assistente de Treinos no WhatsApp
 
-🚀 Funcionalidades
-✅ Registro de Treinos – Basta mencionar o bot e dizer "treinei" para registrar seu treino.
-📊 Relatórios Personalizados – Consulte suas estatísticas mensais com total de treinos, grupamentos musculares e média semanal.
-📅 Média de Treinos por Semana – Veja sua frequência de treinos e mantenha a constância.
-🔥 Grupamentos Musculares – O bot analisa e classifica seus treinos por músculo trabalhado.
-📈 Comparações e Evolução – Acompanhe seu progresso ao longo dos meses.
+O DogBot é um assistente inteligente para registro e acompanhamento de treinos no WhatsApp. Desenvolvido para grupos de academia, ele mantém um histórico detalhado de treinos, gera relatórios personalizados e fornece estatísticas para auxiliar no progresso dos usuários.
 
-🎯 Como Usar
-1️⃣ Envie cadastro no privado do bot para registrar seu nome.
-2️⃣ No grupo, mencione o bot e diga "treinei" para registrar seu treino.
-3️⃣ Envie estatisticas janeiro para receber seu relatório do mês.
+Funcionalidades
+Registro Automático de Treinos – Armazena e organiza os treinos de forma eficiente.
+Relatórios Detalhados – Fornece estatísticas mensais, incluindo frequência de treinos e análise de grupamentos musculares.
+Média de Treinos por Semana – Acompanha a consistência ao longo do tempo.
+Classificação por Grupamentos Musculares – Identifica e categoriza os treinos de acordo com os músculos trabalhados.
+Monitoramento da Evolução – Permite comparações mensais para análise de desempenho.
 
-🛠️ Tecnologias Utilizadas
-Node.js + Google Sheets para armazenar os registros.
-Baileys para integração com WhatsApp.
-Google Apps Script para atualização dos dados.
-🚀 Mantenha o ritmo e continue evoluindo com o DogBot! 💪🔥
+Tecnologias Utilizadas
+Node.js – Processamento e automação.
+Google Sheets – Armazenamento e organização dos registros.
+Baileys – Integração com o WhatsApp.
+Google Apps Script – Atualização dinâmica dos dados.
+O DogBot foi desenvolvido para ajudar na disciplina e motivação dos treinos, tornando o acompanhamento mais prático e eficiente.
