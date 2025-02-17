@@ -36,7 +36,7 @@ async function handleMessage(sock, msg) {
     if (pendingRegistrations.has(senderNumber)) {
         pendingRegistrations.delete(senderNumber);
         await addCadastro(messageContent, senderNumber);
-        await sock.sendMessage(chatId, { text: `Cadastro concluído! Seja bem-vindo, ${messageContent} 👊🔥` });
+        await sock.sendMessage(chatId, { text: `Cadastro concluído! Seja bem-vindo, ${messageContent}. 👊🔥` });
         return;
     }
 
@@ -90,7 +90,7 @@ async function handleMessage(sock, msg) {
             await sock.sendMessage(chatId, { text: avisoMensagem, quoted: { key: msg.key, message: msg.message } });
             setTimeout(async () => {
                 await sock.sendMessage(chatId, { text: ajudaMensagem, quoted: { key: msg.key, message: msg.message } });
-            }, 8000);
+            }, 6000);
             return;
         } else if (messageContent.toLowerCase().startsWith("estatisticas")) {
             const partes = messageContent.split(" ");
